@@ -1,0 +1,29 @@
+apiVersion: 1
+
+datasources:
+  - name: MQTT - US East
+    type: grafana-mqtt-datasource
+    access: proxy
+    uid: ae60qfn8tglxcb
+    jsonData:
+      uri: "tls://$NAMESPACE.useast.lab-app.f5demos.com:8883"
+      tlsSkipVerify: true
+    editable: true
+
+  - name: MQTT - US West
+    type: grafana-mqtt-datasource
+    access: proxy
+    uid: be73u5i3uxhc0a
+    jsonData:
+      uri: "tls://$NAMESPACE.uswest.lab-app.f5demos.com:8883"
+      tlsSkipVerify: true
+    editable: true
+
+  - name: MQTT - Europe
+    type: grafana-mqtt-datasource
+    access: proxy
+    uid: ee5w65pzqcveob
+    jsonData:
+      uri: "tls://$NAMESPACE.europe.lab-app.f5demos.com:8883"
+      tlsSkipVerify: true
+    editable: true
