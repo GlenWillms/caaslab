@@ -17,7 +17,7 @@ PORT=8883                   # Replace with your MQTT broker port
 TOPIC="system/stats"        # Replace with your desired MQTT topic
 CLIENT_ID=$(hostname)       # Replace with your MQTT client ID
 INTERVAL=1                  # Time interval between messages in seconds
-NETWORK_INTERFACE="eth0"    # Replace with your network interface (e.g., eth0, wlan0)
+NETWORK_INTERFACE="ens5"    # Replace with your network interface (e.g., eth0, wlan0)
 
 # Function to get CPU usage
 get_cpu_stats() {
