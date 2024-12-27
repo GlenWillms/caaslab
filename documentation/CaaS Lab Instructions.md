@@ -1,4 +1,4 @@
-1. Complete standard lab up until the point you have a vk8s cluster and download your kubeconfig file. 
+1. Complete standard lab up until the point you have a vk8s cluster and download your kubeconfig file.
 3. Launch web shell for Jumpbox and Grafana machine
 4. Clone caaslab github repo
 ```bash
@@ -9,11 +9,11 @@ git clone https://github.com/GlenWillms/caaslab.git
 ```bash
 
 ### Enter your own namespace value
-export NAMESPACE=keen-duck 
+export NAMESPACE=keen-duck
 ```
 
 ***>>>Exception***
-During testing we don't have wildcard DNS resolution to our CEs, as a result we'll need to add entries to the host file for the lab to be successful. 
+During testing we don't have wildcard DNS resolution to our CEs, as a result we'll need to add entries to the host file for the lab to be successful.
 
 ```bash
 cat >> /etc/hosts<< EOF
@@ -27,8 +27,8 @@ cat /etc/hosts
 ```
 ***>>>End Exception***
 
-4. Upload kubeconfig file to jumpbox using fileserver and set KUBECONFIG environment variable to point to kubeconfig file. 
-```bash 
+4. Upload kubeconfig file to jumpbox using fileserver and set KUBECONFIG environment variable to point to kubeconfig file.
+```bash
 export KUBECONFIG=/srv/filebrowser/ves_$NAMESPACE\_$NAMESPACE-vk8s.
 
 #Let's review again to confirm that we can reach the cluster:
@@ -86,7 +86,7 @@ Set the origin server selection to be **local endpoints only**.  *Json Template 
 ![](raw/407e60824b9d9c16e492ac79b40b0877.png)
 
 ![](raw/1b5049ae5c2eda1e3d633f02d7c8615c.png)
-![](raw/cde7918b7e608cb4f5152352e9b25da4.png). 
+![](raw/cde7918b7e608cb4f5152352e9b25da4.png).
 
 ```json
 {
