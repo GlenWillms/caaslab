@@ -16,9 +16,9 @@ The CAAS Materials a currently dependent on:
 2. From the docker-grafana folder run
 
   Where sudo isn't being used, run:
-  `docker-compose up -d`
+  `docker compose up -d`
   Where sudo is being used, run:
-  `sudo --preserve-env=NAMESPACE docker-compose up -d`
+  `sudo --preserve-env=NAMESPACE docker compose up -d`
 
 3. Generate system stats by running systemstats2mqtt.sh from the root of the repo.
   `./systemstats2mqtt.sh`
