@@ -65,6 +65,7 @@ publish_mqtt() {
   local PAYLOAD="$4"
   local CLIENT_ID="$5"
 
+  echo "  Publishing $TOPIC to $BROKER"
   mqttx pub -h "$BROKER" --port "$PORT" --topic "$TOPIC" --message "$PAYLOAD" --client-id "$CLIENT_ID via $BROKER" --insecure --protocol mqtts
 }
 
