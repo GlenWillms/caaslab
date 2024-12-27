@@ -39,7 +39,7 @@ kubectl apply -f vk8s/
 
 Reference the k8s service mosquitto for your namespace as: mosquitto.namespace
 Set the origin server selection to be **local endpoints only**.
-![[~assets/Pasted image 20241227111702.png]]
+![originserver](~assets/Pasted image 20241227111702.png)
 8. Deploy the load balancer
 ![[Pasted image 20241227111739.png]]
 
