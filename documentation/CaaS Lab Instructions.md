@@ -1,3 +1,28 @@
+
+Lab Overview
+```mermaid
+graph TD
+    subgraph F5XC vK8s Cluster
+        direction TB
+        Node1[Node 1: MQTT US West]
+        Node2[Node 2: MQTT US East]
+        Node3[Node 3: MQTT Europe]
+    end
+
+    Workstation[Jumphost]
+    Grafana[Grafana]
+
+    Workstation -->|Publishes Metrics| Node1
+    Workstation -->|Publishes Metrics| Node2
+    Workstation -->|Publishes Metrics| Node3
+
+    Node1 -->|Publishes to| Grafana
+    Node2 -->|Publishes to| Grafana
+    Node3 -->|Publishes to| Grafana
+
+    Grafana -->|Displays Metrics| Dashboard[Dashboard]
+```
+
 1. Complete standard lab up until the point you have a vk8s cluster and download your kubeconfig file.
 3. Launch web shell for Jumpbox and Grafana machine
 4. Clone caaslab github repo
@@ -40,6 +65,8 @@ kubectl config view
 cd ~/caaslab
 kubectl apply -f vk8s/
 ```
+
+***Exception 2: The next two steps will be automatically completed for students as part of deploying the blueprint***
 6. Deploy origin pool as follows
 
 Reference the k8s service mosquitto for your namespace as: mosquitto.namespace
@@ -82,7 +109,7 @@ Set the origin server selection to be **local endpoints only**.  *Json Template 
 }
 ```
 
-8. Deploy the ***TCP*** load balancer (multi-app connect)
+7. Deploy the ***TCP*** load balancer (multi-app connect)
 ![](raw/407e60824b9d9c16e492ac79b40b0877.png)
 
 ![](raw/1b5049ae5c2eda1e3d633f02d7c8615c.png)
@@ -155,18 +182,21 @@ Set the origin server selection to be **local endpoints only**.  *Json Template 
   }
 }
 ```
+***End Exception***
 
-9. Deploy grafana instance
+8. Deploy Grafana instance
 ```bash
 cd ~/caaslab/docker-grafana
 docker compose up -d
 ```
-10. Run the stats generation from your web shell
+9. Run the stats generation from your web shell
 ```bash
 ~/caaslab/systemstats2mqtt.sh
 ```
 
-11. View your live data from Grafana
+10. View your live data from Grafana
  ![](raw/99141fc9529f2d0d566f1f1f9d8b28cb.png)
 Click through to view your dashboard:
-![](raw/490290bf1a2eb4d837e3129525ca8eb6.png)
+
+
+
