@@ -8,10 +8,10 @@ services:
      - GF_SECURITY_ADMIN_PASSWORD=grafana
      - GF_INSTALL_PLUGINS=grafana-mqtt-datasource
      - NAMESPACE=${NAMESPACE}
-    extra_hosts:
-        # - "${NAMESPACE}.useast.lab-app.f5demos.com:34.48.159.144"
-        # - "${NAMESPACE}.uswest.lab-app.f5demos.com:35.236.21.11"
-        # - "${NAMESPACE}.europe.lab-app.f5demos.com:34.89.198.113"
+  #  extra_hosts:
+  #       - "${NAMESPACE}.useast.lab-app.f5demos.com:34.48.159.144"
+  #       - "${NAMESPACE}.uswest.lab-app.f5demos.com:35.236.21.11"
+  #       - "${NAMESPACE}.europe.lab-app.f5demos.com:34.89.198.113"
     ports:
      - '3000:3000'
     volumes:
