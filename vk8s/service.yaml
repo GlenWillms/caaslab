@@ -5,7 +5,7 @@ metadata:
   labels:
     app: mosquitto
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-internal: "false"
+    ves.io/vsites: "appworld2025-k8s-vsite"
 spec:
   ports:
     - port: 1883

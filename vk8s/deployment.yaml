@@ -4,6 +4,8 @@ metadata:
   name: mosquitto
   labels:
     app: mosquitto
+  annotations:
+    ves.io/vsites: "appworld2025-k8s-vsite"
 spec:
   selector:
     matchLabels:
@@ -14,6 +16,8 @@ spec:
     metadata:
       labels:
         app: mosquitto
+      annotations:
+        ves.io/vsites: "appworld2025-k8s-vsite"
     spec:
       containers:
         - image: eclipse-mosquitto:latest
@@ -30,7 +34,7 @@ spec:
       volumes:
         - name: mosquitto-persistent-storage
           persistentVolumeClaim:
-            claimName: mq-pv-claim
+            claimName: mq-pvc
         - name: mosquitto-config
           configMap:
             name: mosquitto-config

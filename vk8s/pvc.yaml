@@ -1,9 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mq-pv-claim
+  name: mq-pvc
   labels:
     app: mosquitto
+  annotations:
+    ves.io/vsites: "appworld2025-k8s-vsite"
 spec:
   accessModes:
     - ReadWriteOnce
